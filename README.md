@@ -89,3 +89,10 @@ Fin. You should have a `plaso-20260119-amd64.zip` (or whatever your build number
 ## Info
 
 More info, screenshots, etc. coming one day.
+
+## Bugs, Issues, and Notes
+* The "refresh" rate of the status is extreamly slow if you're used to the official plaso builds. Official builds seem to update every 0.5 seconds or so. These binaries seem to update every 1 minute or so. It's not frozen, just give it time.
+* It seems to leave `Worker_*.log.gz`, `something.plaso`, and other files around in the run path instead of cleaning up after itself.
+* There's a lot of untested flags. Basic timelining works and provides the expected output for at least Windows 11 and Ubuntu 24.04 images. I haven't tested every image I can think of, nor all the optional flags.
+* If you are testing and diff a WSL timeline with one created with Windows binaries, remember that Windows uses CRLF line endings, so EVERY line will be different. Run dos2unix on the Windows timeline.
+    * Also keep version differences in mind. Ubuntu 24.04 PPA package is still on 20250918. I've noticed some differenecs in the 'parser' field, but no difference in the 'Timestamp' or 'Message' field (the actual important data).
