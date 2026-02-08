@@ -7,6 +7,7 @@ winget install Python.PythonInstallManager
 
 # Close and reopen your terminal windows
 
+cd C:\PlasoBuild\
 py -VV 
 python -m venv plaso-env && . .\plaso-env\Scripts\Activate.ps1
 python -m pip install --upgrade pip
