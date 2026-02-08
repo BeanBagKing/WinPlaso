@@ -1,7 +1,9 @@
 # make_release.ps1
 Direct link to the official version: [https://github.com/log2timeline/l2tdevtools/blob/main/data/pyinstaller/make_release.ps1](https://github.com/log2timeline/l2tdevtools/blob/main/data/pyinstaller/make_release.ps1)
 
-Part of [l2tdevtools](https://github.com/log2timeline/l2tdevtools/tree/main), this file belongs at `l2tdevtools\data\pyinstaller\make_release.ps1`. The original commit contains the unmodified version as of 2028-02-08. The majority of the changes were accounting for new directory structures, as seen in the [initial diff](https://github.com/BeanBagKing/WinPlaso/commit/ef30dc420eb5ba05d9a56330697c26d9c40082c5). The errors below are expected as of 2026-02-08, since the licensing copy is variable, I'm not going to correct these.
+Part of [l2tdevtools](https://github.com/log2timeline/l2tdevtools/tree/main), this file belongs at `l2tdevtools\data\pyinstaller\make_release.ps1`. The original commit contains the unmodified version as of 2028-02-08. The majority of the changes were accounting for new directory structures, as seen in the [initial diff](https://github.com/BeanBagKing/WinPlaso/commit/ef30dc420eb5ba05d9a56330697c26d9c40082c5). Lines [19](https://github.com/BeanBagKing/WinPlaso/blob/7e9bd876f3f3103e0c01d1613387f43fc1e3377f/PatchedFiles/make_release.ps1#L19) and [23](https://github.com/BeanBagKing/WinPlaso/blob/7e9bd876f3f3103e0c01d1613387f43fc1e3377f/PatchedFiles/make_release.ps1#L23) don't seem to make a difference, as python.exe should be in your path from pymanager, but you still might want to adjust them if you use a different version.
+
+The errors below are expected as of 2026-02-08, since the licensing copy is variable, I'm not going to correct these.
 ```
 Copy-Item: Cannot find path 'C:\working\plaso\dist\l2tdevtools\data\licenses\LICENSE.libcaes' because it does not exist.
 Copy-Item: Cannot find path 'C:\working\plaso\dist\l2tdevtools\data\licenses\LICENSE.libfwps' because it does not exist.
