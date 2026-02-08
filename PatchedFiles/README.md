@@ -5,10 +5,10 @@ Part of [l2tdevtools](https://github.com/log2timeline/l2tdevtools/tree/main), th
 
 The errors below are expected as of 2026-02-08, since the licensing copy is variable, I'm not going to correct these.
 ```
-Copy-Item: Cannot find path 'C:\working\plaso\dist\l2tdevtools\data\licenses\LICENSE.libcaes' because it does not exist.
-Copy-Item: Cannot find path 'C:\working\plaso\dist\l2tdevtools\data\licenses\LICENSE.libfwps' because it does not exist.
-Copy-Item: Cannot find path 'C:\working\plaso\dist\l2tdevtools\data\licenses\LICENSE.Click' because it does not exist.
-Remove-Item: Cannot find path 'C:\working\plaso\dist\plaso\licenses\LICENSE.libwrc' because it does not exist.
+Copy-Item: Cannot find path 'C:\PlasoBuild\plaso\dist\l2tdevtools\data\licenses\LICENSE.libcaes' because it does not exist.
+Copy-Item: Cannot find path 'C:\PlasoBuild\plaso\dist\l2tdevtools\data\licenses\LICENSE.libfwps' because it does not exist.
+Copy-Item: Cannot find path 'C:\PlasoBuild\plaso\dist\l2tdevtools\data\licenses\LICENSE.Click' because it does not exist.
+Remove-Item: Cannot find path 'C:\PlasoBuild\plaso\dist\plaso\licenses\LICENSE.libwrc' because it does not exist.
 ```
 
 # pyproject.toml
