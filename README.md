@@ -92,7 +92,12 @@ Fin. You should have a `plaso-20260119-amd64.zip` (or whatever your build number
 
 ## Info
 
-More info, screenshots, etc. coming one day.
+<img width="787" height="427" alt="image" src="https://github.com/user-attachments/assets/b1bb7acb-295b-4645-8a44-d60e8b2039ee" />
+
+From 43 minutes to 2 minutes. After processing with their respective psort's and accounting for Windows line endings, they are byte for byte matches.
+
+<img width="826" height="220" alt="image" src="https://github.com/user-attachments/assets/61e6a7fd-7756-4e3d-a004-9b7d178f59e6" />
+
 
 ## Bugs, Issues, and Notes
 * The "refresh" rate of the status is extreamly slow if you're used to the official plaso builds. Official builds seem to update every 0.5 seconds or so. These binaries seem to update every 1 minute or so. It's not frozen, just give it time.
