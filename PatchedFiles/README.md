@@ -13,3 +13,13 @@ Remove-Item: Cannot find path 'C:\working\plaso\dist\plaso\licenses\LICENSE.libw
 Direct link to the official version: [https://github.com/log2timeline/l2tdevtools/blob/main/data/pyinstaller/make_release.ps1](https://github.com/log2timeline/l2tdevtools/blob/main/pyproject.toml)
 
 Part of [l2tdevtools](https://github.com/log2timeline/l2tdevtools/tree/main), this file belongs at `l2tdevtools\pyproject.toml`. The original commit contains the unmodified version as of 2028-02-08. The only change was a wildcard, as seen in the [initial diff](https://github.com/BeanBagKing/WinPlaso/commit/2f715b030fb3ddb295d077fedffe44a33d5bcf6b), so that pip install will include subpackages like l2tdevtools.download_helpers. You can also use the original and do `pip install -e .` so that imports come from the package directory.
+
+# vmdk_file_io.py
+Direct link to the official version: [https://github.com/log2timeline/dfvfs/blob/main/dfvfs/file_io/vmdk_file_io.py](https://github.com/log2timeline/dfvfs/blob/main/dfvfs/file_io/vmdk_file_io.py)
+
+### Disclaimer / Warning
+This is an AI slop change. It seems to fix the bug without introducing new problems, but there are workarounds if you don't want to risk issues.
+
+Part of [dfvfs](https://github.com/log2timeline/dfvfs), this file will be provisioned in `<python-venv>\Lib\site-packages\dfvfs\file_io\vmdk_file_io.py` while installing prerequisites. The original commit contains the unmodified version as of 2028-02-08. This change addresses a dropped drive letter on split VMDKs, and can be seen in the [initial diff](https://github.com/BeanBagKing/WinPlaso/commit/797b724d20efcba53b4b0daa37f738095cfbee1e). This was done to address a bug in [VMDK extent path resolution not handling drive letter](https://github.com/log2timeline/dfvfs/issues/776). If you tried to run log2timeline against a VM that used "_Split virtual disk into multiple files_" and was on a different drive letter, the drive letter would get dropped and you would get an error reading "_Unable to scan source with error: Unable to open file object with error: Unable to locate all extent data files._" with log2timeline, or no error at all with psteal. This did NOT cause problems with "_Store virtual disk as a single file_" VMs. As a workaround, if you run into this error and don't want to use the AI slop patch, you can run log2timeline from the VMDK directory and it will happily work, presumably because it's now using relative paths.
+
+If you want to add this fix, get through the `python .\tools\update.py` portion of l2tdevtools and then replace `vmdk_file_io.py` in your python environments `\Lib\site-packages\dfvfs\file_io\` folder.
