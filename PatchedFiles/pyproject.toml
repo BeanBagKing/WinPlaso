@@ -24,5 +24,5 @@ Repository = "https://github.com/log2timeline/l2tdevtools"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["l2tdevtools"]
+include = ["l2tdevtools*"]
 exclude = ["docs", "tests", "tests.*", "utils"]
