@@ -31,13 +31,15 @@ winget install Python.PythonInstallManager
 ### Python setup
 `py -VV` should install the latest version of Python and then print the version number. As of this writing, that is `Python 3.14.3`. If you want to install a specific version, you can use `pymanager install 3.14.3`. l2tdevtools requires `wmi` and doesn't seem to require but uses `deprecated`, `future`, and `build`. Plaso doesn't require but uses `fakeredis` and `mock` for tests.
 
+As of litereally 2 hours ago (2026-02-08 19:28:18 UTC), in the middle of testing this, [setuptools version 82.0.0](https://setuptools.pypa.io/en/stable/history.html#v82-0-0) was pushed out. This deprecates `pkg_resources` and causes a run_tests.py failure on the DownloadPageContent test (`ERROR: download_helpers.pypi (unittest.loader._FailedTest.download_helpers.pypi ... ModuleNotFoundError: No module named 'pkg_resources'`). I don't know if this actually causes a problem, but I figured it's safer to drop back one release for now.
+
 Close and reopen your terminal before this step.
 ```PowerShell
 cd C:\PlasoBuild\
 py -VV 
 python -m venv plaso-env && . .\plaso-env\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-python -m pip install wmi deprecated future build mock 'fakeredis<=2.21.3'
+python -m pip install wmi deprecated future build mock 'fakeredis<=2.21.3' 'setuptools==81.0.0'
 ```
 
 ### Clone the needed repos
