@@ -59,11 +59,15 @@ python -m pip install .
 
 ### Install l2tdevtools, update binaries
 This will update the binaries used for the final build. If you get an `ModuleNotFoundError: No module named 'l2tdevtools.download_helpers'` error, you didn't [patch pyproject.toml](https://github.com/BeanBagKing/WinPlaso/tree/main/PatchedFiles)
+
+You can optionally run `run_tests.py` at this point, you should get one failure for testRunCommand. This is because the test tries to run `echo hello`, but Windows doesn't have an echo binary, it's a function of cmd, so the run command would be `cmd /c echo hello`. TL;DR, this shouldn't affect anything.
 ```PowerShell
 cd C:\Working\l2tdevtools\
 Invoke-WebRequest "https://raw.githubusercontent.com/BeanBagKing/WinPlaso/refs/heads/main/PatchedFiles/pyproject.toml" -OutFile "C:\Working\l2tdevtools\pyproject.toml"
 python -m pip install .
 python .\tools\update.py
+# Optional
+python .\run_tests.py 
 ```
 
 ### Patch make_release.ps1
