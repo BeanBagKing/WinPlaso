@@ -2,7 +2,7 @@
 
 ## Summary
 
-Better summary coming soon™. TL;DR is that I think I have a reproducable process for building fast Windows binaries. Remember kids, don't trust random binaries from the internet, everything you need to do this yourself should be below.
+Better summary coming soon™. TL;DR is that I think I have a reproducable process for building fast Windows binaries. Remember kids, don't trust random binaries from the internet, everything you need to do this yourself should be below. Please read through the [How to build](https://github.com/BeanBagKing/WinPlaso?tab=readme-ov-file#how-to-build) steps at least once, but if you're building and rebuilding to test like me, you may be interested in the [commands without the commentary](https://github.com/BeanBagKing/WinPlaso/blob/main/tldr_commands.md).
 
 References
 * https://nullsec.us/log2timeline-windows-build/
