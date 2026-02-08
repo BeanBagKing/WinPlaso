@@ -8,6 +8,7 @@ Better summary coming soon™. TL;DR is that I think I have a reproducable proce
 
 References
 * https://nullsec.us/log2timeline-windows-build/
+* https://nullsec.us/plaso-for-windows-part-2/
 
 ## How to build
 
