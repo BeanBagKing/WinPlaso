@@ -78,7 +78,7 @@ As with PyInstaller, I'm using the latest stable version (20260119) as of this w
 ```
 cd C:\Working\plaso\
 git checkout tags/20260119
-C:\Working\l2tdevtools\data\pyinstaller\make_release.ps
+C:\Working\l2tdevtools\data\pyinstaller\make_release.ps1
 ```
 Fin. You should have a `plaso-20260119-amd64.zip` (or whatever your build number is) in the `C:\Working\plaso\` directory
 
