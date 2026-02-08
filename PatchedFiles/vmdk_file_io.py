@@ -52,6 +52,22 @@ class VMDKFile(file_object_io.FileObjectIO):
 
     parent_location_path_segments = file_system.SplitPath(parent_location)
 
+    # On Windows, SplitPath can yield a drive prefix as a separate segment
+    # (e.g. ["D:", "dir", "disk.vmdk"]). Some JoinPath implementations will
+    # drop that drive prefix, yielding an invalid extent path like "\dir\s001.vmdk".
+    # Preserve the drive prefix and re-apply it after JoinPath.
+    drive_prefix = ''
+    if parent_location_path_segments:
+      first_segment = parent_location_path_segments[0]
+      if (isinstance(first_segment, str) and len(first_segment) == 2 and
+          first_segment[1] == ':'):
+        drive_prefix = first_segment
+        parent_location_path_segments = parent_location_path_segments[1:]
+
+    # Build stable "parent directory" segments once, instead of mutating in-loop.
+    # The last segment is the descriptor filename.
+    parent_dir_segments = parent_location_path_segments[:-1]
+
     extent_data_files = []
     for extent_descriptor in iter(vmdk_handle.extent_descriptors):
       extent_data_filename = extent_descriptor.filename
@@ -63,15 +79,13 @@ class VMDKFile(file_object_io.FileObjectIO):
       if not path_separator:
         filename = extent_data_filename
 
-      # The last parent location path segment contains the extent data filename.
-      # Since we want to check if the next extent data file exists we remove
-      # the previous one form the path segments list and add the new filename.
-      # After that the path segments list can be used to create the location
-      # string.
-      parent_location_path_segments.pop()
-      parent_location_path_segments.append(filename)
-      extent_data_file_location = file_system.JoinPath(
-          parent_location_path_segments)
+      extent_segments = list(parent_dir_segments)
+      extent_segments.append(filename)
+      extent_data_file_location = file_system.JoinPath(extent_segments)
+
+      # Re-apply Windows drive prefix if it was split off above.
+      if drive_prefix:
+        extent_data_file_location = f'{drive_prefix}{extent_data_file_location}'
 
       # Note that we don't want to set the keyword arguments when not used
       # because the path specification base class will check for unused
