@@ -16,11 +16,11 @@ If ( -not $PythonPath )
 {
 	If ( $Architecture -eq "win32" )
 	{
-		$PythonPath = "C:\working\env-3.14.3\Scripts"
+		$PythonPath = "C:\PlasoBuild\plaso-env\Scripts"
 	}
 	Else
 	{
-		$PythonPath = "C:\working\env-3.14.3\Scripts"
+		$PythonPath = "C:\PlasoBuild\plaso-env\Scripts"
 	}
 }
 
