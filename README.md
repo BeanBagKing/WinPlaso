@@ -1,7 +1,7 @@
 # WinPlaso
 
 ## Summary
-Update: TL;DR - WSL is not supposed to be this slow, I was using it wrong. I learned a few things and will post a longer update soon. I'm still glad I got a working version and reproducible steps, it's still much faster than last time, but it's not the game changer I hoped.
+Update: TL;DR - WSL is not supposed to be this slow, I was using it wrong. I still think there is value in the Windows version. I posted a longer explanation here: [https://nullsec.us/plaso-for-windows-part-3/](https://nullsec.us/plaso-for-windows-part-3/)
 
 [https://nullsec.us/plaso-for-windows-part-2/](https://nullsec.us/plaso-for-windows-part-2/)
 
@@ -10,6 +10,7 @@ Better summary coming soon™. TL;DR is that I think I have a reproducable proce
 References
 * https://nullsec.us/log2timeline-windows-build/
 * https://nullsec.us/plaso-for-windows-part-2/
+* https://nullsec.us/plaso-for-windows-part-3/
 
 ## How to build
 
