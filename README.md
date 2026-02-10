@@ -1,6 +1,7 @@
 # WinPlaso
 
 ## Summary
+Update: TL;DR - WSL is not supposed to be this slow, I was using it wrong. I learned a few things and will post a longer update soon. I'm still glad I got a working version and reproducible steps, it's still much faster than last time, but it's not the game changer I hoped.
 
 [https://nullsec.us/plaso-for-windows-part-2/](https://nullsec.us/plaso-for-windows-part-2/)
 
